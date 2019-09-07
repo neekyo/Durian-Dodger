@@ -134,7 +134,6 @@ function checkCollision(obstacle) {
     if (obstacle.y + 60 > sprite.y && obstacle.y < sprite.y + 60) {
         if (obstacle.x + 50 < sprite.x + 50 && obstacle.x + 50 > sprite.x) {
             console.log("Collision");
-            x
             gameOver();
         } else if (obstacle.x < sprite.x + 41 && obstacle.x > sprite.x) {
             console.log("Collision");
@@ -177,17 +176,16 @@ function startGame() {
     difficulty = Number(document.querySelector("#diffSelect").value);
     id = setInterval(updateCanvas, difficulty)
     startGameButton.disabled = true
+    loop();
 }
 
 var startGameButton = document.getElementById("startGameButton");
 startGameButton.onclick = startGame;
 
-// function restartGame() {
-//     updateCanvas()
-// }
+// function restartGame() {}
 
 // var retryGameButton = document.getElementById("retryGameButton");
-// retryGameButton.onclick = restartGame;
+// retryGameButton.onlick = restartGame;
 
 ctx.fillStyle = 'white';
 ctx.font = '18px serif';
@@ -236,7 +234,6 @@ function gameOver() {
     ctx.fillStyle = "#606060"
     ctx.font = "70px Anton"
     ctx.fillText("GAME OVER", 430, 300)
-
 }
 
 function init() {

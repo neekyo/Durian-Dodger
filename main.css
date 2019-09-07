@@ -131,7 +131,7 @@ canvas {
     position: absolute;
     width: 170px;
     height: 120px;
-    left: 15px;
+    left: 15.25px;
 }
 
 #view img:nth-child(2) {
@@ -192,16 +192,14 @@ body {
 
 .unbreakable-container {
     position: absolute;
-    bottom: 10px;
-    left: 20px;
+    bottom: 11px;
+    left: 21px;
 }
 
 .unbreakable {
     font-family: 'Anton', sans-serif;
     line-height: 1;
-
     letter-spacing: -.07em;
-
     color: #fff;
 }
 
@@ -209,9 +207,7 @@ body {
     font-family: 'Anton', sans-serif;
     font-size: 60px;
     line-height: 1;
-
     margin-top: -11px;
-
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s cubic-bezier(.190, 1.000, .220, 1.000) 3s;
     -webkit-transform: translateX(-1000%);
@@ -219,7 +215,6 @@ body {
     transform: translateX(-1000%);
     letter-spacing: -1px;
     text-transform: uppercase;
-
     color: #fc0;
 }
 
@@ -338,7 +333,7 @@ li {
     width: 100%;
 }
 
-#time {
+/* #time {
     font-family: 'Anton', Helvetica, sans-serif;
     position: absolute;
 }
@@ -347,4 +342,5 @@ audio {
     position: absolute;
     top: 15px;
     left: 200px;
-}
+    width: 230px
+} */
