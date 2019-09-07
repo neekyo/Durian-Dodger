@@ -182,6 +182,13 @@ function startGame() {
 var startGameButton = document.getElementById("startGameButton");
 startGameButton.onclick = startGame;
 
+// function restartGame() {
+//     updateCanvas()
+// }
+
+// var retryGameButton = document.getElementById("retryGameButton");
+// retryGameButton.onclick = restartGame;
+
 ctx.fillStyle = 'white';
 ctx.font = '18px serif';
 
@@ -229,6 +236,7 @@ function gameOver() {
     ctx.fillStyle = "#606060"
     ctx.font = "70px Anton"
     ctx.fillText("GAME OVER", 430, 300)
+
 }
 
 function init() {
@@ -247,4 +255,3 @@ function animate() {
     model();
     draw();
 }
-
