@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="main.css" rel="stylesheet">
+</head>
+
+<body onload=init()> 
+    <div id="status">
+    </div>
+    <div id="gradient"></div>
+    <div id="page">
+        <div id="Message-Container">
+            <div id="message">
+                <h1>Congratulations!</h1>
+                <p>You are done.</p>
+                <p id="moves"></p>
+                <input id="okBtn" type="button" onclick="toggleVisablity('Message-Container')" value="Cool!" />
+            </div>
+        </div>
+        <div id="menu">
+            <div class="custom-select">
+                <select id="diffSelect">
+                    <option value="9">Easy</option>
+                    <option value="7">Medium</option>
+                    <option value="5">Hard</option>
+                    <option value="3">Extreme</option>
+                </select>
+            </div>
+            <input id="startGameButton" type="button" onclick="startGame()" value="Start" />
+        </div>
+        <div id="view">
+            <img src="./images/wasd2.png">
+            <img id="arrows" src="./images/arrowkeys2.png">
+            <div>
+                <canvas id="canvas" width="482" height="482">
+                    This text is displayed if your browser does not support HTML5 Canvas.
+                </canvas>
+            </div>
+        </div>
+        <time id="timer">00:00</time>
+        <div id="rules">
+            <p>HOW TO PLAY</p>
+            <ul>
+                <li>Use WASD or arrow keys to move (Use both for x2 movement speed!)</li><br>
+                <li>Dodge the falling durians!</li><br>
+                <li>Watch out.. they speed up the further you traverse!</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="unbreakable-container">
+        <div class="unbreakable">
+            <span class="un">DU</span><span class="break">RI</span><span class="able">AN</span>
+        </div>
+        <div class="ks">Dodger</div>
+    </div>
+    
+    <audio src="./sounds/bg_music.wav" id="audio" controls></audio>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+
+</body>
+
+</html>

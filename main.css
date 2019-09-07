@@ -1,0 +1,350 @@
+$menuHeight: 65px+10px;
+
+@mixin transition {
+    transition-property: background-color opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+input,
+select {
+    @include transition;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.30);
+    height: 45px;
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    appearance: none;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.70);
+    }
+
+    &:active {
+        background-color: black;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+canvas {
+    margin-top: 20px;
+}
+
+.custom-select {
+    display: inline-block;
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC');
+        background-repeat: no-repeat;
+        background-position: 125px center;
+    }
+}
+
+#Message-Container {
+    visibility: hidden;
+    color: white;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.30);
+    z-index: 1;
+
+    #message {
+        width: 300px;
+        height: 300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-left: -150px;
+        margin-top: -150px;
+    }
+}
+
+#page {
+    /* display: flex;
+    flex-direction: row; */
+    font-family: "Segoe UI", Arial, sans-serif;
+    text-align: center;
+    height: auto;
+    width: auto;
+    margin: auto;
+}
+
+#menu {
+    margin: auto;
+    padding: 10px;
+    height: 65px;
+    box-sizing: border-box;
+
+    h1 {
+        margin: 0;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 3.2rem;
+    }
+}
+
+#view {
+    position: absolute;
+    top: 65px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#view img {
+    position: absolute;
+    width: 170px;
+    height: 120px;
+    left: 15px;
+}
+
+#view img:nth-child(2) {
+    position: absolute;
+    width: 180px;
+    height: 120px;
+    top: 130px;
+    left: 10px;
+}
+
+#arrows {
+    position: absolute;
+    width: 170px;
+    height: 350px;
+    top: 120px
+}
+
+#gradient {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    input,
+    select {
+        width: 120px;
+    }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Anton);
+
+body {
+    background: #000;
+}
+
+.unbreakable-container {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+
+.unbreakable {
+    font-family: 'Anton', sans-serif;
+    line-height: 1;
+
+    letter-spacing: -.07em;
+
+    color: #fff;
+}
+
+.ks {
+    font-family: 'Anton', sans-serif;
+    font-size: 60px;
+    line-height: 1;
+
+    margin-top: -11px;
+
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s cubic-bezier(.190, 1.000, .220, 1.000) 3s;
+    -webkit-transform: translateX(-1000%);
+    -ms-transform: translateX(-1000%);
+    transform: translateX(-1000%);
+    letter-spacing: -1px;
+    text-transform: uppercase;
+
+    color: #fc0;
+}
+
+.animate .ks {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
+span {
+    font-family: 'Anton', Helvetica, sans-serif;
+    font-size: 40px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+    color: #fff;
+
+    filter: alpha(opacity=0);
+}
+
+.able {
+    -webkit-transition: all .3s cubic-bezier(.190, 1.000, .220, 1.000) 2.3s;
+    transition: all .3s cubic-bezier(.190, 1.000, .220, 1.000) 2.3s;
+    letter-spacing: -.07em;
+}
+
+.break {
+    -webkit-transition: all .3s ease-in-out 2s;
+    transition: all .3s ease-in-out 2s;
+    letter-spacing: -.07em;
+}
+
+.un {
+    -webkit-transition: all .3s ease-in-out 1.7s;
+    transition: all .3s ease-in-out 1.7s;
+    letter-spacing: -.07em;
+}
+
+.animate .un {
+    font-size: 50px;
+
+    -webkit-transform: scale(1.5, 1.5);
+    -ms-transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5);
+
+    opacity: 1;
+
+    filter: alpha(opacity=100);
+}
+
+.animate .break {
+    font-size: 70px;
+
+    -webkit-transform: scale(1.5, 1.5);
+    -ms-transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5);
+
+    opacity: 1;
+
+    filter: alpha(opacity=100);
+}
+
+.animate .able {
+    font-size: 90px;
+
+    -webkit-transform: scale(1.5, 1.5);
+    -ms-transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5);
+
+    opacity: 1;
+
+    filter: alpha(opacity=100);
+}
+
+#rules {
+    font-family: 'Anton', Helvetica, sans-serif;
+    font-size: 17px;
+    color: white;
+    width: 180px;
+    height: 38 s0px;
+    position: absolute;
+    right: 5px;
+    background: gray;
+    border: 3px solid lightgray;
+    border-radius: 10px;
+    top: 30%;
+    line-height: 20px;
+}
+
+#rules ul {
+    list-style-position: inside;
+    padding-right: 10px;
+    list-style-type: none;
+}
+
+ul,
+li {
+    margin-left: 10px;
+    padding-left: 0;
+}
+
+#rules p {
+    color: #fc0;
+
+}
+
+#status {
+    position: absolute;
+    top: 35%;
+    z-index: 1;
+    text-align: center;
+    display: block;
+    color: white;
+    font-size: 5rem;
+    width: 100%;
+}
+
+#time {
+    font-family: 'Anton', Helvetica, sans-serif;
+    position: absolute;
+}
+
+audio {
+    position: absolute;
+    top: 15px;
+    left: 200px;
+}
