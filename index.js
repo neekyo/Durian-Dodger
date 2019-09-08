@@ -182,7 +182,18 @@ function startGame() {
 var startGameButton = document.getElementById("startGameButton");
 startGameButton.onclick = startGame;
 
-// function restartGame() {}
+// function restartGame() {
+// ctx.clearRect(0, 0,  canvas.width, canvas.height);
+// var canvas = document.getElementById('canvas');
+// var ctx = canvas.getContext('2d');
+// canvas.width = 1280
+// canvas.height = 700
+// var ctx = canvas.getContext('2d');
+// let obstacles = [];
+// var cancelMe = "";
+// let difficulty = 10;
+// let id;
+// }
 
 // var retryGameButton = document.getElementById("retryGameButton");
 // retryGameButton.onlick = restartGame;
