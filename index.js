@@ -6,7 +6,30 @@ let obstacles = [];
 var cancelMe = "";
 let difficulty = 10;
 let id;
-var score = 0;
+
+var localStorageName = "duriandodger";
+var highScore;
+
+function getScore () {
+    let highScore = localStorage.getItem('highscore');
+    //localStorage.getItem(localStorageName);
+    console.log('highscore is ',highScore)
+    document.getElementById('score').innerHTML = "Highscore: " + highScore + " ft."
+}
+getScore()
+function saveScore(score) {
+    let highScore;
+    if(!isNaN(localStorage.getItem('highscore')))
+    {
+         highScore = localStorage.getItem('highscore');
+    } else {
+         highScore = 0;
+
+    }
+    console.log(highScore)
+    highScore = Math.max(score, highScore);
+    localStorage.setItem('highscore', highScore);
+}
 
 var img = new Image();
 img.src = './images/background.jpg';
@@ -155,7 +178,6 @@ function updateCanvas() {
     }
     ctx.fillStyle = "#606060"
     ctx.fillText("Distance Traversed: " + miles + " ft.", 540, 40);
-
     sprite.draw()
     sprite.fall();
 
@@ -229,7 +251,7 @@ class Durian {
         this.y = y;
     }
 
-    draw() {    
+    draw() {
         ctx.drawImage(durianImg, this.x, this.y, 50, 60);
     }
     fall() {
@@ -253,6 +275,12 @@ function gameOver() {
     ctx.fillStyle = "#606060"
     ctx.font = "70px Anton"
     ctx.fillText("GAME OVER", 430, 300)
+    console.log('save ',miles)
+    saveScore(miles)
+    audio.pause()
+    new Audio('sounds/game_over.wav').play()
+
+    
 }
 
 function init() {
@@ -272,4 +300,3 @@ function animate() {
     // draw();
 }
 
-reuest
