@@ -6,6 +6,7 @@ let obstacles = [];
 var cancelMe = "";
 let difficulty = 10;
 let id;
+var score = 0;
 
 var img = new Image();
 img.src = './images/background.jpg';
@@ -271,6 +272,4 @@ function animate() {
     // draw();
 }
 
-function highScore() {
-    
-}
+reuest

@@ -31,7 +31,7 @@
                 </select>
             </div>
             <input id="startGameButton" type="button" onclick="startGame()" value="Start" />
-            <input id="retryGameButton" type="button" onclick="restartGame()" value="Retry" />
+            <input id="retryGameButton" type="button" onclick="restartGame()" value="Restart" />
         </div> 
         <div id="view">
             <img src="./images/wasd2.png">
@@ -42,8 +42,8 @@
                 </canvas>
             </div>
         </div>
-        <time id="timer">00:00</time>
-        <div id="highscore">
+        <!-- <time id="timer">00:00</time> -->
+        <div id="score">
             <p>Highscore: 0 ft.</p>
         </div>
 
@@ -64,7 +64,7 @@
         <div class="ks">Dodger</div>
     </div>
     
-    <audio src="./sounds/bg_music2.wav" id="audio" controls></audio>
+    <audio src="./sounds/bg_music2.wav" id="audio"></audio>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript"
