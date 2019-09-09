@@ -7,23 +7,23 @@ var cancelMe = "";
 let difficulty = 10;
 let id;
 
-var localStorageName = "duriandodger";
-var highScore;
+// var localStorageName = "duriandodger";
+// var highScore;
 
-function getScore () {
+function getScore() {
     let highScore = localStorage.getItem('highscore');
     //localStorage.getItem(localStorageName);
-    console.log('highscore is ',highScore)
+    console.log('highscore is ', highScore)
     document.getElementById('score').innerHTML = "Highscore: " + highScore + " ft."
 }
 getScore()
+
 function saveScore(score) {
     let highScore;
-    if(!isNaN(localStorage.getItem('highscore')))
-    {
-         highScore = localStorage.getItem('highscore');
+    if (!isNaN(localStorage.getItem('highscore'))) {
+        highScore = localStorage.getItem('highscore');
     } else {
-         highScore = 0;
+        highScore = 0;
 
     }
     console.log(highScore)
@@ -223,6 +223,7 @@ function restartGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     backgroundImage.draw();
     audio.pause();
+    location.reload()
 }
 
 var retryGameButton = document.getElementById("retryGameButton");
@@ -275,12 +276,10 @@ function gameOver() {
     ctx.fillStyle = "#606060"
     ctx.font = "70px Anton"
     ctx.fillText("GAME OVER", 430, 300)
-    console.log('save ',miles)
+    console.log('save ', miles)
     saveScore(miles)
     audio.pause()
     new Audio('sounds/game_over.wav').play()
-
-    
 }
 
 function init() {
@@ -299,4 +298,3 @@ function animate() {
     // model();
     // draw();
 }
-
