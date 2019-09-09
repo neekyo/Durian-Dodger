@@ -176,27 +176,34 @@ function startGame() {
     difficulty = Number(document.querySelector("#diffSelect").value);
     id = setInterval(updateCanvas, difficulty)
     startGameButton.disabled = true
+    init();
     loop();
 }
 
 var startGameButton = document.getElementById("startGameButton");
 startGameButton.onclick = startGame;
 
-// function restartGame() {
-// ctx.clearRect(0, 0,  canvas.width, canvas.height);
-// var canvas = document.getElementById('canvas');
-// var ctx = canvas.getContext('2d');
-// canvas.width = 1280
-// canvas.height = 700
-// var ctx = canvas.getContext('2d');
-// let obstacles = [];
-// var cancelMe = "";
-// let difficulty = 10;
-// let id;
-// }
+function restartGame() {
+    clearInterval(id);
+    obstacles = [];
+    var timeFalling = 0;
+    sprite.x = 2;
+    sprite.y = 528;
+    sprite.distance = 0;
+    sprite.int = null;
+    dis = 0;
+    miles = 0;
+    fallSpeed = 1.0005;
+    startGameButton.disabled = false;
+    ctx.fillStyle = 'white';
+    ctx.font = '18px serif';
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    backgroundImage.draw();
+    audio.pause();
+}
 
-// var retryGameButton = document.getElementById("retryGameButton");
-// retryGameButton.onlick = restartGame;
+var retryGameButton = document.getElementById("retryGameButton");
+retryGameButton.onlick = restartGame;
 
 ctx.fillStyle = 'white';
 ctx.font = '18px serif';
@@ -211,7 +218,7 @@ function randomObstacle() {
 let fallSpeed = 1.0005
 
 setInterval(function () {
-    fallSpeed += .00025 // tweak this to change how quickly it increases in difficulty
+    fallSpeed += .0003 // tweak this to change how quickly it increases in difficulty
     console.log(fallSpeed) // maybe put a conditional to prevent it from getting too fast idk lol
 }, 7000); // timer at which it gets harder
 
@@ -221,7 +228,7 @@ class Durian {
         this.y = y;
     }
 
-    draw() {
+    draw() {    
         ctx.drawImage(durianImg, this.x, this.y, 50, 60);
     }
     fall() {
@@ -252,7 +259,7 @@ function init() {
     // add listener function to loop on end
     audio.addEventListener("ended", loop, false);
     // set animation on perpetual loop
-    setInterval(animate, 30);
+    setInterval(animate);
 }
 
 function loop() {
@@ -260,6 +267,10 @@ function loop() {
 }
 
 function animate() {
-    model();
-    draw();
+    // model();
+    // draw();
+}
+
+function highScore() {
+    
 }

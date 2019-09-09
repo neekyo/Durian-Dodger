@@ -129,16 +129,17 @@ canvas {
 
 #view img {
     position: absolute;
-    width: 170px;
+    width: 180px;
     height: 120px;
-    left: 15.25px;
+    left: 10px;
+    top: 10%;
 }
 
 #view img:nth-child(2) {
     position: absolute;
     width: 180px;
     height: 120px;
-    top: 130px;
+    top: 27%;
     left: 10px;
 }
 
@@ -295,13 +296,12 @@ span {
     font-size: 17px;
     color: white;
     width: 180px;
-    height: 38 s0px;
     position: absolute;
     right: 5px;
     background: gray;
     border: 3px solid lightgray;
     border-radius: 10px;
-    top: 30%;
+    top: 26%;
     line-height: 20px;
 }
 
@@ -319,7 +319,20 @@ li {
 
 #rules p {
     color: #fc0;
+}
 
+#highscore {
+    font-family: 'Anton', Helvetica, sans-serif;
+    font-size: 17px;
+    color: white;
+    width: 180px;
+    position: absolute;
+    right: 5px;
+    background: gray;
+    border: 3px solid lightgray;
+    border-radius: 10px;
+    top: 66%;
+    line-height: 20px;
 }
 
 #status {
@@ -333,7 +346,7 @@ li {
     width: 100%;
 }
 
-/* #time {
+#time {
     font-family: 'Anton', Helvetica, sans-serif;
     position: absolute;
 }
@@ -343,4 +356,4 @@ audio {
     top: 15px;
     left: 200px;
     width: 230px
-} */
+}
