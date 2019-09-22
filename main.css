@@ -130,7 +130,7 @@ canvas {
 	width: 180px;
 	height: 120px;
 	left: 10px;
-	top: 10%;
+	top: 5rem;
 }
 
 #view img:nth-child(2) {
@@ -145,7 +145,7 @@ canvas {
 	position: absolute;
 	width: 170px;
 	height: 350px;
-	top: 120px;
+	top: 10rem;
 }
 
 #gradient {
@@ -190,7 +190,7 @@ body {
 
 .unbreakable-container {
 	position: absolute;
-	bottom: 3rem;
+	bottom: 2rem;
 	left: 1.5rem;
 }
 
@@ -297,9 +297,9 @@ span {
 	right: 5px;
 	background: gray;
 	border: 3px solid lightgray;
-	border-radius: 10px;
-	top: 26%;
-	line-height: 20px;
+	border-radius: .5rem;
+	top: 15rem;
+	line-height: 1rem;
 }
 
 #rules ul {
@@ -327,8 +327,8 @@ li {
 	right: 5px;
 	background: gray;
 	border: 3px solid lightgray;
-	border-radius: 10px;
-	top: 70%;
+	border-radius: .5rem;
+	top: 35rem;
 	line-height: 20px;
 }
 
