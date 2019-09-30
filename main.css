@@ -357,3 +357,8 @@ audio {
     left: 200px;
     width: 230px
 }
+
+.disclaimer {
+    margin-top: 6px;
+    color: white;
+}

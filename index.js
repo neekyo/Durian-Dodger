@@ -7,9 +7,6 @@ var cancelMe = "";
 let difficulty = 10;
 let id;
 
-// var localStorageName = "duriandodger";
-// var highScore;
-
 function getScore() {
     let highScore = localStorage.getItem('highscore');
     //localStorage.getItem(localStorageName);
@@ -24,7 +21,6 @@ function saveScore(score) {
         highScore = localStorage.getItem('highscore');
     } else {
         highScore = 0;
-
     }
     console.log(highScore)
     highScore = Math.max(score, highScore);
