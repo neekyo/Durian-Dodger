@@ -232,12 +232,12 @@ function randomObstacle() {
 	return new Durian(x, y);
 }
 
-let fallSpeed = 1.0005;
+let fallSpeed = 1.0003;
 
 setInterval(function() {
-	fallSpeed += 0.0005; // tweak this to change how quickly it increases in difficulty
-	console.log(fallSpeed); // maybe put a conditional to prevent it from getting too fast idk lol
-}, 7000); // timer at which it gets harder
+	fallSpeed += 0.0008; // tweak this to change how quickly it increases in difficulty
+	// console.log(fallSpeed);
+}, 8000); // timer at which it gets harder
 
 class Durian {
 	constructor(x, y) {

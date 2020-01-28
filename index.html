@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/all.min.css">
 </head>
 
 <body onload=init()> 
@@ -22,7 +23,7 @@
             </div>
         </div>
         <div id="menu">
-            <div class="custom-select">
+            <div class="custom-select instruct">
                 <select id="diffSelect">
                     <option value="6.5">Easy</option>
                     <option value="5.5">Medium</option>
@@ -32,7 +33,7 @@
             </div>
             <input id="startGameButton" type="button" class="instruct" onclick="startGame()" value="Start" />
             <input id="retryGameButton" type="button" class="instruct" onclick="restartGame()" value="Reset" />
-            <p class="disclaimer">Heads up: Once you wipe out, hit reset & change your desired difficulty if you dare, then hit start to play again!</p>
+            <p class="disclaimer">DISCLAIMER: Once you wipe out, hit reset & change to a higher difficulty if you dare, then hit start to play again!</p>
         </div> 
         <div id="view">
             <img src="./images/wasd2.png">
@@ -50,9 +51,11 @@
         <div id="rules">
             <p>HOW TO PLAY</p>
             <ul>
-                <li>Use WASD or arrow keys to move (Use both for x2 movement speed!)</li><br>
+                <li>Use WASD and/or arrow keys to move (Use both for x2 movement speed!)</li><br>
                 <li>Dodge the falling durians!</li><br>
                 <li>Watch out.. they speed up the further you traverse!</li>
+                <li><p class="oj">DEV TIP  <i class="fas fa-skull-crossbones danger"></i></p>
+                <li>Don't bother Extreme mode without 2 hands</i></li>
             </ul>
         </div>
     </div>
