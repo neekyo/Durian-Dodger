@@ -298,7 +298,7 @@ span {
 	background: gray;
 	border: .188rem solid lightgray;
 	border-radius: .5rem;
-	top: 15rem;
+	top: 8.5rem;
 	line-height: 1rem;
 }
 
@@ -331,7 +331,7 @@ li {
 	background: gray;
 	border: 0.188rem solid lightgray;
 	border-radius: .5rem;
-	top: 41rem;
+	top: 33rem;
 	line-height: 2rem;
 }
 
@@ -344,11 +344,6 @@ li {
 	color: white;
 	font-size: 5rem;
 	width: 100%;
-}
-
-#time {
-	font-family: 'Anton', Helvetica, sans-serif;
-	position: absolute;
 }
 
 #startGameButton:hover {

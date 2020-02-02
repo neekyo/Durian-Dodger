@@ -8,6 +8,7 @@ let difficulty = 10;
 let id;
 let dis = 0;
 let miles = 0;
+let gameRunning = false;
 
 function getScore() {
 	let highScore = localStorage.getItem('highscore');
@@ -128,21 +129,29 @@ class obstacle {
 
 document.onkeydown = function(e) {
 	switch (e.keyCode) {
+		case 80:
+			console.log('Paused');	
+			if (gameRunning) {
+				paused = !paused;
+				startGameButton.value = paused ? 'Un-Pause' : 'Pause';
+				console.log('Paused');
+			}
+			break;
 		case 37:
 		case 65:
 			sprite.moveLeft();
-			console.log('left', sprite);
+			console.log('Left', sprite);
 			break;
 		case 38:
 		case 87:
 		case 32:
 			sprite.moveUp();
-			console.log('right', sprite);
+			console.log('Up', sprite);
 			break;
 		case 39:
 		case 68:
 			sprite.moveRight();
-			console.log('right', sprite);
+			console.log('Right', sprite);
 			break;
 	}
 };
@@ -189,11 +198,18 @@ function updateCanvas() {
 }
 
 function startGame() {
-	difficulty = Number(document.querySelector('#diffSelect').value);
-	id = setInterval(updateCanvas, difficulty);
-	startGameButton.disabled = true;
-	init();
-	loop();
+	if (gameRunning) {
+		paused = !paused;
+		startGameButton.value = paused ? 'Un-Pause' : 'Pause';
+	} else {
+		difficulty = Number(document.querySelector('#diffSelect').value);
+		id = setInterval(updateCanvas, difficulty);
+		startGameButton.disabled = true;
+		init();
+		loop();
+		gameRunning = true;
+		startGameButton.value = 'Pause';
+	}
 }
 
 var startGameButton = document.getElementById('startGameButton');
@@ -285,9 +301,4 @@ function init() {
 
 function loop() {
 	audio.play();
-}
-
-function animate() {
-	// model();
-	// draw();
 }
