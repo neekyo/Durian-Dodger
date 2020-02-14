@@ -9,6 +9,7 @@ let id;
 let dis = 0;
 let miles = 0;
 let gameRunning = false;
+let paused = false;
 
 function getScore() {
 	let highScore = localStorage.getItem('highscore');
@@ -168,6 +169,10 @@ function checkCollision(obstacle) {
 }
 
 function updateCanvas() {
+	if (paused) {
+		return;
+	}
+
 	backgroundImage.move();
 
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
