@@ -130,10 +130,9 @@ class obstacle {
 document.onkeydown = function(e) {
 	switch (e.keyCode) {
 		case 80:
-			console.log('Paused');	
 			if (gameRunning) {
 				paused = !paused;
-				startGameButton.value = paused ? 'Un-Pause' : 'Pause';
+				startGameButton.value = paused ? 'Resume' : 'Pause';
 				console.log('Paused');
 			}
 			break;
@@ -200,15 +199,14 @@ function updateCanvas() {
 function startGame() {
 	if (gameRunning) {
 		paused = !paused;
-		startGameButton.value = paused ? 'Un-Pause' : 'Pause';
+		startGameButton.value = paused ? 'Resume' : 'Pause';
 	} else {
 		difficulty = Number(document.querySelector('#diffSelect').value);
 		id = setInterval(updateCanvas, difficulty);
-		startGameButton.disabled = true;
-		init();
-		loop();
 		gameRunning = true;
 		startGameButton.value = 'Pause';
+		init();
+		loop();
 	}
 }
 
