@@ -14,7 +14,12 @@ let paused = false;
 function getScore() {
 	let highScore = localStorage.getItem('highscore');
 	console.log('highscore is ', highScore);
-	document.getElementById('score').innerHTML = 'Highscore: ' + highScore + ' ft.';
+
+	if (highScore === null) {
+		document.getElementById('score').innerHTML = 'Highscore: <span>0</span> ft.';
+	} else {
+		document.getElementById('score').innerHTML = 'Highscore: ' + highScore + ' ft.';
+	}
 }
 getScore();
 

@@ -290,7 +290,7 @@ span {
 
 #rules {
 	font-family: 'Anton', Helvetica, sans-serif;
-	font-size: 1.063rem;
+	font-size: 1rem;
 	color: white;
 	width: 11.25rem;
 	position: absolute;
@@ -306,6 +306,12 @@ span {
 	list-style-position: inside;
 	padding-right: .625rem;
 	list-style-type: none;
+}
+
+#rules ul > p {
+	margin-top: 4px;
+	color: white;
+	font-size: .8rem;
 }
 
 ul,
