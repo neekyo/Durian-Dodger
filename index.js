@@ -16,7 +16,7 @@ function getScore() {
 	console.log('highscore is ', highScore);
 
 	if (highScore === null) {
-		document.getElementById('score').innerHTML = 'Highscore: <span>0</span> ft.';
+		document.getElementById('score').innerHTML = 'Highscore: 0 ft.';
 	} else {
 		document.getElementById('score').innerHTML = 'Highscore: ' + highScore + ' ft.';
 	}
